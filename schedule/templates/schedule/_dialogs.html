@@ -1,9 +1,10 @@
 {% block extra_head %}
+{% load i18n %}
 {{block.super}}
 <script>
 function openCancelDialog(node, cancel_url, delete_url, event){
   event.stopPropagation();
-  var btns = {"This":function(){window.location=cancel_url;}, "All":function(){window.location=delete_url}, "Do nothing":function(){$(this).dialog("destroy");}};
+  var btns = {"{% trans "This" %}":function(){window.location=cancel_url;}, "{% trans "All" %}":function(){window.location=delete_url}, "{% trans "Do nothing" %}":function(){$(this).dialog("destroy");}};
   dia = $("#delete_dialog").dialog({'buttons':btns, 'modal':true});
   dia.dialog('open');
   return false;
@@ -11,15 +12,15 @@ function openCancelDialog(node, cancel_url, delete_url, event){
 
 function openEditDialog(node, occurrence_url, event_url, event){
   event.stopPropagation();
-  var btns = {"This":function(){window.location=occurrence_url;}, "All":function(){window.location=event_url}, "Do nothing":function(){$(this).dialog("destroy");}};
+  var btns = {"{% trans "This" %}":function(){window.location=occurrence_url;}, "{% trans "All" %}":function(){window.location=event_url}, "{% trans "Do nothing" %}":function(){$(this).dialog("destroy");}};
   dia = $("#edit_dialog").dialog({'buttons':btns, 'modal':true});
   dia.dialog('open');
   return false;
 }
 
 function openDetail(node){
-  var btns = { "Close":function(){$(this).dialog("destroy");}};
-  dia = $($(node).attr("href")).dialog({'buttons':btns, 'modal':true, 'title':'Details'});
+  var btns = { "{% trans "Close" %}":function(){$(this).dialog("destroy");}};
+  dia = $($(node).attr("href")).dialog({'buttons':btns, 'modal':true, 'title':'{% trans "Details" %}'});
   dia.dialog('open');
   return false;
 }
@@ -44,11 +45,11 @@ $(function() {
 {% endblock %}
 
 
-<div style="display:none;" id="delete_dialog" title="Question">
-  Do you want to cancel this occurrence or delete all occurrences of this event?
+<div style="display:none;" id="delete_dialog" title="{% trans "Question" %}">
+  {% trans "Do you want to cancel this occurrence or delete all occurrences of this event?" %}
 </div>
 
-<div style="display:none;" id="edit_dialog" title="This is a recurring event">
-  Do you want to edit this occurrence or all occurrences?
+<div style="display:none;" id="edit_dialog" title="{% trans "This is a recurring event" %}">
+  {% trans "Do you want to edit this occurrence or all occurrences?" %}
 </div>
 

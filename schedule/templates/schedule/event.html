@@ -6,17 +6,17 @@
 
 <div class="navigation">
   <a href="{% url day_calendar event.calendar.slug %}{% querystring_for_date event.start 3 %}">
-    Day
+    {% trans "Day" %}
   </a>
   <a href="{% url month_calendar event.calendar.slug %}{% querystring_for_date event.start 2 %}">
-    Month
+    {% trans "Month" %}
   </a>
   <a href="{% url year_calendar event.calendar.slug %}{% querystring_for_date event.start 1%}">
-    Year
+    {% trans "Year" %}
   </a>
 </div>
 
-<div class="event_actions" align="center">
+<div class="event_actions centered">
   {% if back_url %}
   <a href="{{ back_url }}">
     <img border="0" src="{{ MEDIA_URL }}schedule/img/left_mod.png" alt="{% trans "Back" %}"/>
@@ -31,18 +31,18 @@
     <img border="0" src="{{ MEDIA_URL }}schedule/img/delete.png" alt="{% trans "Delete" %}"/>
   </a>
 </div>
-<h2 align="center">{{event.title}}</h2>
-<table align="center">
+<h2 class="centered">{{event.title}}</h2>
+<table class="centered">
 <tr>
-<td>Starts</td>
+<td>{% trans "Starts" %}</td>
 <td>{% blocktrans with event.start|date:_("DATETIME_FORMAT") as start_date %}{{ start_date }}{% endblocktrans %}</td>
 </tr>
 <tr>
-<td>Ends</td>
+<td>{% trans "Ends" %}</td>
 <td>{% blocktrans with event.end|date:_("DATETIME_FORMAT") as end_date %}{{ end_date }}{% endblocktrans %}</td>
 </tr>
 <tr>
-<td>Reoccurs</td>
+<td>{% trans "Reoccurs" %}</td>
 {% if event.rule %}
 <td>{{ event.rule }} until {% blocktrans with event.end_recurring_period|date:_("DATETIME_FORMAT") as end_recurring_date %}{{ end_recurring_date }}{% endblocktrans %}</td>
 {% else %}
@@ -50,7 +50,7 @@
 {% endif %}
 </tr></table>
 {% if event.description %}
-<h3>Description</h3>
+<h3>{% trans "Description" %}</h3>
 <p>{{event.description}}</p>
 {% endif %}
 

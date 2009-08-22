@@ -248,10 +248,12 @@ div.time-picker li.selected {
   padding-right:5px;
 }
 
-body, td {font-family:sans-serif;}
-
 .error {
   border:1px solid red;
+}
+
+.centered {
+  text-align:center;
 }
 
 #messages {
@@ -270,7 +272,7 @@ div.navigation {
 }
 
 div.navigation a {
-  padding:0 20px;
+  padding:0 20px 0 0;
 }
 
 div.tablewrapper {

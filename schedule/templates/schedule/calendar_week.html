@@ -1,5 +1,5 @@
 {% extends "schedule/base.html" %}
-{% load scheduletags %}
+{% load scheduletags i18n %}
 
 {% block body %}
 
@@ -7,19 +7,19 @@
 
 <div class="navigation">
   <a href="{% url month_calendar calendar.slug %}{% querystring_for_date periods.week.start 2 %}">
-    Month
+    {% trans "Month" %}
   </a>
   <a href="{% url year_calendar calendar.slug %}{% querystring_for_date periods.week.start 1%}">
-    Year
+    {% trans "Year" %}
   </a>
 </div>
 
 <div class="tablewrapper">
     <div class="calendarname">{{ calendar.name }}</div>
-    {% prevnext "week_calendar" calendar.slug periods.week "\Week W, M Y" %}
+    {% prevnext "week_calendar" calendar.slug periods.week _('WEEK_FORMAT') %}
     <div class="now">
       <a href="{% url week_calendar calendar.slug %}">
-        This week
+        {% trans "This week" %}
       </a>
     </div>
 </div>

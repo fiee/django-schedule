@@ -1,4 +1,4 @@
-{% load scheduletags %}
+{% load scheduletags i18n %}
 {% ifnotequal day.start.month month.start.month %}
   <td class="{{size}} daynumber noday"></td>
 {% else %}
@@ -9,7 +9,7 @@
 {% endif %}
     <div class="header">
         <a href="{% url day_calendar calendar.slug %}{% querystring_for_date day.start 3 %}">
-            <b>{{day.start.day}}</b>
+            <strong>{{day.start.day}}</strong>
         </a>
     </div>
     {% ifnotequal size "small" %}
@@ -19,10 +19,10 @@
                         <div class="eventcell eventcell{{o.class}}{% if o.occurrence.cancelled %} cancelled{% endif %}" 
                             href="#{% hash_occurrence o.occurrence %}" onclick="openDetail(this);">
                             <div class="starttime">
-                                {% ifequal o.class 0 %}{{ o.occurrence.start|time:"G:i" }}{% endifequal %}
-                                {% ifequal o.class 1 %}{{ o.occurrence.start|time:"G:i" }}{% endifequal %}
-                                {% ifequal o.class 2 %}(All day){% endifequal %}
-                                {% ifequal o.class 3 %}Ends at {{ o.occurrence.end|time:"G:i" }}{% endifequal %}
+                                {% ifequal o.class 0 %}{{ o.occurrence.start|time:_('TIME_FORMAT') }}{% endifequal %}
+                                {% ifequal o.class 1 %}{{ o.occurrence.start|time:_('TIME_FORMAT') }}{% endifequal %}
+                                {% ifequal o.class 2 %}{% trans "(All day)" %}{% endifequal %}
+                                {% ifequal o.class 3 %}{% trans "Ends at" %} {{ o.occurrence.end|time:_('TIME_FORMAT') }}{% endifequal %}
                             </div>
                             <div class="eventdesc">
                                 {% title o.occurrence %}

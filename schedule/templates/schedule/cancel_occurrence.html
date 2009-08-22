@@ -7,8 +7,8 @@
 
 <form action="." method="POST">
     <h2>{{ occurrence.title }}</h2>
-    <strong>From</strong> {{ occurrence.start|date:_("DATETIME_FORMAT") }}
-    <strong>to</strong> {{ occurrence.end|date:_("DATETIME_FORMAT") }} <br/>
+    <strong>{% trans "From" %}</strong> {{ occurrence.start|date:_("DATETIME_FORMAT") }}
+    <strong>{% trans "to" %}</strong> {{ occurrence.end|date:_("DATETIME_FORMAT") }} <br/>
     <input type="submit" value="{% trans "Delete" %}" name="submit" />
     <input type="button" value="{% trans "Cancel" %}" onclick="window.location='{{next}}'"/>
     <input type="hidden" name="next" value="{{next|default:""}}"/>
