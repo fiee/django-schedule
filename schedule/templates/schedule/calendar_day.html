@@ -4,17 +4,6 @@
 {% block body %}
 
 {% include "schedule/_dialogs.html" %}
-<div class="navigation">
-  <a href="{% url week_calendar calendar.slug %}{% querystring_for_date periods.day.start 3 %}">
-    {% trans "Week" %}
-  </a>
-  <a href="{% url month_calendar calendar.slug %}{% querystring_for_date periods.day.start 2 %}">
-    {% trans "Month" %}
-  </a>
-  <a href="{% url year_calendar calendar.slug %}{% querystring_for_date periods.day.start 1%}">
-    {% trans "Year" %}
-  </a>
-</div>
 <div class="tablewrapper">
     <div class="calendarname">{{ calendar.name }}</div>
     {% prevnext "day_calendar" calendar.slug periods.day _("DATETIME_FORMAT") %}
@@ -34,4 +23,19 @@
     </div>
 </div>
 
+{% endblock %}
+
+{% block navigation %}
+<li><a href="{% url week_calendar calendar.slug %}{% querystring_for_date periods.day.start 3 %}">
+    {% trans "Week" %}
+  </a>
+</li>
+<li><a href="{% url month_calendar calendar.slug %}{% querystring_for_date periods.day.start 2 %}">
+    {% trans "Month" %}
+  </a>
+</li>
+<li><a href="{% url year_calendar calendar.slug %}{% querystring_for_date periods.day.start 1%}">
+    {% trans "Year" %}
+  </a>
+</li>
 {% endblock %}

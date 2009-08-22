@@ -28,12 +28,13 @@
     {% endfor %}
     </tr>
 </table></p>
-<div class="navigation">
-  <a href="{% url month_calendar calendar.slug %}">
-    {% trans "Current Month Calendar" %}
-  </a>
-  <a href="{% url year_calendar calendar.slug %}">
-    {% trans "Current Year Calendar" %}
-  </a>
-</div>
+{% endblock %}
+
+{% block navigation %}
+<li>
+    <a href="{% url month_calendar calendar.slug %}">{% trans "Current Month" %}</a>
+</li>
+<li>
+    <a href="{% url year_calendar calendar.slug %}">{% trans "Current Year" %}</a>
+</li>
 {% endblock %}
