@@ -20,7 +20,7 @@
     <div class="weekday weekday{{forloop.counter}}">
       <div class="weekdayheader">
         <a href="{% url day_calendar calendar.slug %}{% querystring_for_date day.start %}">
-          {{day.start|date:"l, d"}}
+          {{day.start|date:_("l, d")}}
         </a>
       </div>
       <div class="weekdaytable">

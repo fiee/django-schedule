@@ -1,6 +1,6 @@
 {% extends "schedule/base.html" %}
 {% load scheduletags %}
 {% block body %}
-<p class="centered"><b>{{ calendar.name }}</b></p>
+<h3>{{ calendar.name }}</h3>
 {% month_table calendar periods.month "small" %}
 {% endblock %}

@@ -1,32 +1,22 @@
 {% load i18n %}
 <div class="detail">
-<h2 class="centered">{{occurrence.title}}</h2>
-<table class="centered">
-    <tr>
-        <td class="left">{% trans "Starts" %}</td>
-        <td>{% blocktrans with occurrence.start|date:_("DATETIME_FORMAT") as start_date %}{{ start_date }}{% endblocktrans %}</td>
-    </tr>
-    <tr>
-        <td class="left">{% trans "Ends" %}</td>
-        <td>{% blocktrans with occurrence.end|date:_("DATETIME_FORMAT") as end_date %}{{ end_date }}{% endblocktrans %}</td>
-    </tr>
-    {% if occurrence.event.rule %}
-        {% if not occurrence.id %}
-            <tr>
-                <td class="left">{% trans "Reoccurs" %}</td><td>{{occurrence.event.rule}}</td>
-            </tr>
-            {% if occurrence.event.end_recurring_period %}
-                <tr>
-                    <td class="left">{% trans "Until" %}</td>
-                    <td>{% blocktrans with occurrence.event.end_recurring_period|date:_("DATETIME_FORMAT") as end_date %}{{ end_date }}{% endblocktrans %}</td>
-                </tr>
-            {% endif %}
-        {% endif %}
-    {% endif %}
-</table>
+<h2>{{occurrence.title}}</h2>
+<dl class="event">
+<dt>{% trans "Starts" %}</dt>
+<dd>{{ occurrence.start|date:_("DATETIME_FORMAT") }}</dd>
+<dt>{% trans "Ends" %}</dt>
+<dd>{{ occurrence.end|date:_("DATETIME_FORMAT") }}</dd>
+{% if occurrence.event.rule %}{% if not occurrence.id %}
+<dt>{% trans "Reoccurs" %}</dt>
+<dd>{{occurrence.event.rule}}
+{% if occurrence.event.end_recurring_period %}
+{% trans "Until" %} {{ occurrence.end|date:_("DATETIME_FORMAT") }}
+{% endif %}
+</dd>
+{% endif %}{% endif %}
+</dl>
 {% if occurrence.description %}
 <h3>{% trans "Description" %}</h3>
 <p>{{occurrence.description}}</p>
 {% endif %}
 </div>
-

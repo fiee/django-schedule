@@ -3,9 +3,16 @@
 {% block head_title %}{% trans "Available Calendars" %}{% endblock %}
 {% block body %}
 <h2>{% trans "Available Calendars" %}</h2>
-<ul>
+<dl class="calendar_list">
 {% for cal in object_list %}
-<li><b>{{ cal }}</b> : <a href="{% url compact_calendar cal.slug %}">{% trans "Small Month" %}</a> -- <a href="{% url month_calendar cal.slug %}">{% trans "1 Month" %}</a> -- <a href="{% url tri_month_calendar cal.slug %}">{% trans "3 Months" %}</a> -- <a href="{% url year_calendar cal.slug %}">{% trans "This Year" %}</a> -- <a href="{% url week_calendar cal.slug %}">{% trans "Weekly" %}</a> -- <a href="{% url day_calendar cal.slug %}">{% trans "Daily" %}</a> -- <a href="/schedule/feed/calendar/upcoming/{{ cal.id }}/">{% trans "Feed" %}</a></li><br/>
+<dt>{{ cal }}</dt>
+<dd><a href="{% url compact_calendar cal.slug %}">{% trans "Small Month" %}</a></dd>
+<dd><a href="{% url month_calendar cal.slug %}">{% trans "1 Month" %}</a></dd>
+<dd><a href="{% url tri_month_calendar cal.slug %}">{% trans "3 Months" %}</a></dd>
+<dd><a href="{% url year_calendar cal.slug %}">{% trans "This Year" %}</a></dd>
+<dd><a href="{% url week_calendar cal.slug %}">{% trans "Weekly" %}</a></dd>
+<dd><a href="{% url day_calendar cal.slug %}">{% trans "Daily" %}</a></dd>
+<dd><a href="/schedule/feed/calendar/upcoming/{{ cal.id }}/">{% trans "Feed" %}</a></dd>
 {% endfor %}
-</ul>
+</dl>
 {% endblock %}
