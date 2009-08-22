@@ -1,0 +1,21 @@
+=====================================
+Integrate DjangoSchedule with FeinCMS
+=====================================
+
+FeinCMS is a Django-based CMS by Matthias Kestenholz (feinheit.ch),
+see http://github.com/matthiask/feincms/
+
+Models
+------
+
+FeinCMS pages consist of content blocks that can come from 
+different apps/modules.
+
+``models.py`` is a sample how to use Events and Calendars from
+DjangoSchedule as content types in FeinCMS.
+
+Templates
+---------
+
+As you can see in ``models.py``, FeinCMS renders content blocks
+with separate templates that live normally in ``templates/content``.

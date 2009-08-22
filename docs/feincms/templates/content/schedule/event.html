@@ -1,0 +1,16 @@
+{% load i18n %}
+<h3>{{event.title}}</h3>
+<dl class="event">
+<dt>{% trans "Starts" %}</dt>
+<dd>{{ event.start|date:_("DATETIME_FORMAT") }}</dd>
+<dt>{% trans "Ends" %}</dt>
+<dd>{{ event.end|date:_("DATETIME_FORMAT") }}</dd>
+{% if event.rule %}
+<dt>{% trans "Reoccurs" %}</dt>
+<dd>{{ event.rule }} {% trans "until" %} {{ event.end_recurring_period|date:_("DATETIME_FORMAT") }}</dd>
+{% endif %}
+</dl>
+{% if event.description %}
+<h4>{% trans "Description" %}</h4>
+<p>{{event.description}}</p>
+{% endif %}
