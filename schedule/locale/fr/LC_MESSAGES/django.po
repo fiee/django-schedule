@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django-scheduleN\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-08-22 12:18+0200\n"
+"POT-Creation-Date: 2009-08-29 17:23+0200\n"
 "PO-Revision-Date: 2008-12-05 23:59-0400\n"
 "Last-Translator: Yann Malet <yann.malet@gmail.com>\n"
 "Language-Team: Yann Malet <yann.malet@gmail.com>\n"
@@ -377,7 +377,8 @@ msgstr "Hebdomadaire"
 
 #: templates/schedule/calendar_day.html:34
 #: templates/schedule/calendar_tri_month.html:26
-#: templates/schedule/calendar_week.html:44 templates/schedule/event.html:44
+#: templates/schedule/calendar_week.html:44
+#: templates/schedule/calendar_year.html:36 templates/schedule/event.html:44
 #: templates/schedule/occurrence.html:36
 #, fuzzy
 msgid "Month"
@@ -386,7 +387,8 @@ msgstr "Mensuel"
 #: templates/schedule/calendar_day.html:38
 #: templates/schedule/calendar_month.html:23
 #: templates/schedule/calendar_tri_month.html:29
-#: templates/schedule/calendar_week.html:41 templates/schedule/event.html:47
+#: templates/schedule/calendar_week.html:41
+#: templates/schedule/calendar_year.html:39 templates/schedule/event.html:47
 #, fuzzy
 msgid "Year"
 msgstr "Annuel"
@@ -436,12 +438,8 @@ msgstr ""
 msgid "l, d"
 msgstr ""
 
-#: templates/schedule/calendar_year.html:35
-msgid "Current Month"
-msgstr ""
-
-#: templates/schedule/calendar_year.html:38
-msgid "Current Year"
+#: templates/schedule/calendar_year.html:12
+msgid "F"
 msgstr ""
 
 #: templates/schedule/cancel_occurrence.html:5

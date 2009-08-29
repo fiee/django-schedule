@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: DjangoSchedule 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-08-22 12:18+0200\n"
-"PO-Revision-Date: 2009-08-22 12:39+0100\n"
+"POT-Creation-Date: 2009-08-29 17:23+0200\n"
+"PO-Revision-Date: 2009-08-29 17:25+0100\n"
 "Last-Translator: Henning Hraban Ramm <hraban@fiee.net>\n"
 "Language-Team: fiëé visuëlle <hraban@fiee.net>\n"
 "MIME-Version: 1.0\n"
@@ -403,6 +403,7 @@ msgstr "Woche"
 #: templates/schedule/calendar_day.html:34
 #: templates/schedule/calendar_tri_month.html:26
 #: templates/schedule/calendar_week.html:44
+#: templates/schedule/calendar_year.html:36
 #: templates/schedule/event.html:44
 #: templates/schedule/occurrence.html:36
 msgid "Month"
@@ -412,6 +413,7 @@ msgstr "Monat"
 #: templates/schedule/calendar_month.html:23
 #: templates/schedule/calendar_tri_month.html:29
 #: templates/schedule/calendar_week.html:41
+#: templates/schedule/calendar_year.html:39
 #: templates/schedule/event.html:47
 msgid "Year"
 msgstr "Jahr"
@@ -449,7 +451,7 @@ msgstr "Dieser Monat"
 
 #: templates/schedule/calendar_week.html:10
 msgid "WEEK_FORMAT"
-msgstr "W. \Woc\he Y"
+msgstr "W. \\Woc\\he Y"
 
 #: templates/schedule/calendar_week.html:13
 msgid "This week"
@@ -459,13 +461,9 @@ msgstr "Diese Woche"
 msgid "l, d"
 msgstr "l, d."
 
-#: templates/schedule/calendar_year.html:35
-msgid "Current Month"
-msgstr "Dieser Monat"
-
-#: templates/schedule/calendar_year.html:38
-msgid "Current Year"
-msgstr "Dieses Jahr"
+#: templates/schedule/calendar_year.html:12
+msgid "F"
+msgstr "F"
 
 #: templates/schedule/cancel_occurrence.html:5
 #: templates/schedule/cancel_occurrence.html:12
@@ -531,6 +529,10 @@ msgstr "bis"
 msgid "Day"
 msgstr "Tag"
 
+#~ msgid "Current Month"
+#~ msgstr "Dieser Monat"
+#~ msgid "Current Year"
+#~ msgstr "Dieses Jahr"
 #~ msgid "AM"
 #~ msgstr "vorm."
 #~ msgid "PM"
