@@ -40,7 +40,7 @@ class Event(models.Model):
 
     def __unicode__(self):
         date_format = u'l, %s' % ugettext("DATE_FORMAT")
-        return ugettext('%(title)s: %(start)s-%(end)s') % {
+        return ugettext(u'%(title)s: %(start)s-%(end)s') % {
             'title': self.title,
             'start': date(self.start, date_format),
             'end': date(self.end, date_format),
@@ -337,7 +337,7 @@ class EventRelation(models.Model):
         app_label = 'schedule'
     
     def __unicode__(self):
-        return '%s(%s)-%s' % (self.event.title, self.distinction, self.content_object)
+        return u'%s(%s)-%s' % (self.event.title, self.distinction, self.content_object)
     
 
 
