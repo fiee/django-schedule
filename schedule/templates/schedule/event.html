@@ -6,16 +6,16 @@
 <div class="event_actions centered">
   {% if back_url %}
   <a href="{{ back_url }}">
-    <img border="0" src="{{ MEDIA_URL }}schedule/img/left_mod.png" alt="{% trans "Back" %}"/>
+    <img border="0" src="{{ MEDIA_URL }}left_mod.png" alt="{% trans "Back" %}"/>
   </a>
   &nbsp;
   {% endif %}
   <a href="{% url edit_event event.calendar.slug,event.id %}">
-    <img border="0" src="{{ MEDIA_URL }}schedule/img/pencil.png" alt="{% trans "Change" %}"/>
+    <img border="0" src="{{ MEDIA_URL }}pencil.png" alt="{% trans "Change" %}"/>
   </a>
   &nbsp;
   <a href="{% url delete_event event.id %}">
-    <img border="0" src="{{ MEDIA_URL }}schedule/img/delete.png" alt="{% trans "Delete" %}"/>
+    <img border="0" src="{{ MEDIA_URL }}delete.png" alt="{% trans "Delete" %}"/>
   </a>
 </div>
 <h2 class="centered">{{event.title}}</h2>
@@ -31,7 +31,7 @@
 </dl>
 {% if event.description %}
 <h3>{% trans "Description" %}</h3>
-<p>{{event.description}}</p>
+<p>{{event.description|urlize}}</p>
 {% endif %}
 
 {% endblock %}

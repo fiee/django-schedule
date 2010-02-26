@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from django.contrib.contenttypes import generic
 from django.db import models
 from django.db.models import Q
@@ -142,7 +143,7 @@ class Calendar(models.Model):
 
     def __unicode__(self):
         return self.name
-    
+
     def events(self):
         return self.event_set.all()
     events = property(events)
@@ -173,7 +174,7 @@ class Calendar(models.Model):
         return EventListManager(self.events.all()).occurrences_after(date)
 
     def get_absolute_url(self):
-        return reverse('s_calendar', args=[self.slug])
+        return reverse('calendar_home', kwargs={'calendar_slug':self.slug})
 
     def add_event_url(self):
         return reverse('s_create_event_in_calendar', args=[self.slug])

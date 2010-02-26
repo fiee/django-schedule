@@ -17,6 +17,6 @@
 </dl>
 {% if occurrence.description %}
 <h3>{% trans "Description" %}</h3>
-<p>{{occurrence.description}}</p>
+<p>{{occurrence.description|urlize}}</p>
 {% endif %}
 </div>
